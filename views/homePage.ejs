@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beatles - Revolver</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="app">
+<div class="banner">
+    <header class="banner__logo">
+        <img class="banner__image" src="./images/cover.jpg" alt="Revolver - album cover">
+    </header>
+    <nav class="navigation banner__navigation">
+        <ul class="navigation__list">
+            <% titles.forEach(function (title) { %>
+                <li class="navigation__list-item"><a class="navigation__link"
+                                                     href="/song/<%= title[0] %>"><%= title[1] %></a></li>
+            <% }); %>
+        </ul>
+    </nav>
+</div>
+<section class="lyrics">
+    <h1 class="lyrics__band">Beatles</h1>
+    <% if(song){ %>
+    <h2 class="lyrics__title"><%= song.title%></h2>
+    <p class="lyrics__text"><%= song.lyrics%></p>
+    <% } else { %>
+    <p class="lyrics__error">Wybierz piosenkę z menu po lewej.</p>
+    <% }  %>
+</section>
+</body>
+</html>
